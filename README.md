@@ -1,11 +1,9 @@
 # xlx_webpack4_vue2
 webpack4+vue2环境配置
 
-### 使用
-
 ```
-// 克隆仓库
-1. git clone git@github.com:xiao-linxin/xlx_webpack4_vue2.git
+// 使用步骤
+1. git clone git@github.com:xiao-linxin/xlx_webpack4_vue2.git // 克隆仓库
 
 2. npm install // 下载依赖
 
