@@ -52,6 +52,30 @@ const webpackConfig = merge(baseWebpackConfig, {
             }
           }
         ]
+      },
+      {
+        test: /\.styl$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: false
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: false
+            }
+          },
+          {
+            loader: 'stylus-loader',
+            options: {
+              sourceMap: false
+            }
+          }
+        ]
       }
     ]
   },

@@ -1,15 +1,19 @@
+/* eslint-disable */
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Foo from '@/components/foo'
-import Bar from '@/components/bar'
+import Router from 'vue-router'
+import Layout from '@/views/layout'
+Vue.use(Router)
 
-Vue.use(VueRouter)
+const routes = [
+  { path: '/', component: Layout, redirect: {name: 'page_list'},
+    children: [
+      {path: '/', name: 'page_list', component: () => import('@/components/page_list')},
+      {path: '/post/:hash', name: 'page_post', component: () => import('@/components/page_post')}
+    ]
+  }
+]
 
-const router = new VueRouter({
-  routes: [
-    { path: '/foo', component: Foo },
-    { path: '/bar', component: Bar }
-  ]
+export default new Router({
+  mode: 'history',
+  routes: routes
 })
-
-export default router

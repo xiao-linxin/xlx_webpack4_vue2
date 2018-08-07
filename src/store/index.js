@@ -1,12 +1,15 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import tags_view from './modules/tags_view.js'
+import getters from './getters.js'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
-    list: [1, 2, 4]
+const store = new Vuex.Store({
+  modules: {
+    tags_view
   },
-  mutations: {},
-  actions: {}
+  getters
 })
+
+export default store

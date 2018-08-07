@@ -47,6 +47,31 @@ const devWebpackConfig = merge(baseWebpackConfig, {
             }
           }
         ]
+      },
+      {
+        test: /\.styl$/,
+        use: [
+          'vue-style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'stylus-loader',
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
       }
     ]
   },
